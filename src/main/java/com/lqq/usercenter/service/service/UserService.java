@@ -18,9 +18,10 @@ public interface UserService extends IService<User> {
      * @param account 用户账号
      * @param password 用户密码
      * @param checkPassword 校验码
+     * @param planetCode  星球编号
      * @return
      */
-    long userRegister(String account,String password ,String checkPassword);
+    long userRegister(String account,String password ,String checkPassword,String planetCode);
 
     /**
      * 用户登录
@@ -38,4 +39,10 @@ public interface UserService extends IService<User> {
      * @return
      */
     User getSafetyUser(User origin);
+
+    /**
+     * 用户注销
+     * @param request
+     */
+    int userLogout(HttpServletRequest request);
 }
